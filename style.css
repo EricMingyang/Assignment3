@@ -1,0 +1,109 @@
+h1{
+	text-align: center;
+}
+#name_input{
+	margin-left: 20px;
+}
+#gender_div{
+	margin-left: 20px;
+}
+#birth{
+	margin-left: 20px;
+}
+#email{
+	margin-left: 20px;
+}
+#phone, #edu_date, #edu_field, #exp_description, #exp_date, #select_degree{
+	margin-left: 20px;
+}
+body{
+	background: lightgrey;
+}
+
+#submit{
+	width: 60px;
+	height: 40px;
+	margin-top: 40px;
+	margin-left: 50%;
+	background: lightblue;
+}
+
+
+
+@media (max-width:480px)  { 
+/* smartphones, Android phones, landscape iPhone */
+ #name_input{
+ 	display: grid;
+ 	justify-content: space-evenly;
+ }
+}
+
+@media (max-width:600px)  { 
+	h1{
+	text-align: center;
+	}
+	#name_input{
+		display: flow;
+		margin-left: 20px;
+		margin-bottom: 10px;
+	}
+	#gender_div{
+		margin-left: 20px;
+	}
+	#birth{
+		margin-left: 20px;
+	}
+	#email{
+		margin-left: 20px;
+	}
+	#phone, #edu_date, #edu_field, #exp_description, #exp_date, #select_degree{
+		margin-left: 20px;
+	}
+	body{
+		background: lightgrey;
+	}
+
+	#submit{
+		width: 60px;
+		height: 40px;
+		margin-top: 40px;
+		margin-left: 50%;
+		background: lightblue;
+	}
+}
+
+@media (min-width:601px){
+	h1{
+	text-align: center;
+	}
+	#name_input{
+		display: flow;
+		margin-left: 20px;
+		margin-bottom: 10px;
+	}
+	#gender_div{
+		margin-left: 20px;
+	}
+	#birth{
+		margin-left: 20px;
+	}
+	#email{
+		margin-left: 20px;
+	}
+	#phone, #edu_date, #edu_field, #exp_description, #exp_date, #select_degree{
+		margin-left: 20px;
+	}
+	body{
+		background: lightgrey;
+	}
+
+	#submit{
+		width: 60px;
+		height: 40px;
+		margin-top: 40px;
+		margin-left: 50%;
+		background: lightblue;
+	}
+
+}
+
