@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1> Apple Side# INC. Job Application Form</h1>
+  <div id="style_change">
+    <button id="day" onclick="day()">Day Mode</button>
+    <button id="night" onclick="night()">Night Mode</button>
+    <button id="reset" onclick="reset()">Reset</button>
+  </div>
+
+  <h2>Basic Information</h2>
+  <div id="info">
+    <div id = "name_input">
+    <div id="fname_div">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" value="">
+    </div>
+    <div id="mname_div">
+    <label for="mname">Middle name:</label>
+    <input type="text" id="mname" name="lname" value="can leave it blank">
+    </div>
+    <div id="lname_div">
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" value="">
+    </div>
+    </div>
+    <div id="gender_div">
+    <p>Gender</p>
+    <input type="radio" id="gender" name="gender" checked>
+    <label>Male</label>
+    <input type="radio" id="gender" name="gender">
+    <label>Female</label>
+    <input type="radio" id="gender" name="gender">
+    <label>Unknown</label>
+    </div>
+
+    <div id="birth">
+    <p>Birth Date:</p>
+    <input type="Date" name="">
+    </div>
+
+    <div id="email">
+    <p>Email: </p>
+    <input type="text" id="email_input">
+    </div>
+
+    <div id="phone">
+    <p>Phone number: </p>
+    <input type="text" id="phone_input" value="">
+    </div>
+  </div>
+
+  <h2>Education</h2>
+  <div>
+    <div id="select_degree">
+    <p>Select your highest degree: </p>
+    <input type="radio" id="degree" name="degree" checked>
+    <label>PHD</label>
+    <input type="radio" id="degree" name="degree">
+    <label>Master</label>
+    <input type="radio" id="degree" name="degree">
+    <label>Bechlor</label>
+    <input type="radio" id="degree" name="degree">
+    <label>College</label>
+    </div>
+
+    <div id="edu_date">
+    <p>Start From: </p>
+    <input type="Date" name="">
+    <p>End date: </p>
+    <input type="Date" name="">
+    </div>
+
+    <div id="edu_field">
+    <p>Field of study: </p>
+    <input type="text" id="field_input" name="">
+    </div>
+  </div>
+
+  <h2>Experience</h2>
+  <div>
+    <div id="exp_date">
+    <p>Start From: </p>
+    <input type="Date" name="">
+    <p>End date: </p>
+    <input type="Date" name="">
+    </div>
+
+    <div id="exp_description">
+    <p>Description: </p>
+    <textarea id="textarea_input"></textarea>
+
+    </div>
+  </div>
+  <h2>Upload Resume: </h2>
+  <input type="file" name="">
+  <br>
+  <button id="submit" onclick="submit()">Submit</button>
+  <script >
+    function submit(){
+      var name_valid = 0;
+      /*
+      name_valid:
+      0 -> valid
+      1 -> first name is empty
+      2 -> last name is empty
+      */
+      var first_name = document.getElementById("fname").value;
+      var middle_name = document.getElementById('mname').value;
+      var last_name = document.getElementById('lname').value;
+      if (first_name == ""){
+        name_valid = 1;
+      }
+      else if (last_name == ""){
+        name_valid = 2;
+      }
+
+      var email_valid = 0;
+      var email = document.getElementById('email_input').value;
+      if (email == ''){
+        email_valid = 1;
+      }
+
+      var phone_valid = 0;
+      var phone = document.getElementById('phone_input').value;
+      if (phone.length != 10){
+        phone_valid = 1;
+      }
+      for (var i = 0; i < phone.length; i++){
+        if (phone[i] < '0' || phone[i] > '9'){
+          phone_valid = 1;
+        }
+      }
+
+      var field_valid = 0;
+      var field = document.getElementById('field_input').value;
+      if (field == ""){
+        field_valid = 1;
+      }
+      var text_area_valid = 0;
+      var textarea = document.getElementById('textarea_input').value;
+      if (textarea == ''){
+        text_area_valid = 1;
+      }
+      if (name_valid == 1){
+        alert("You must enter a valid name. ");
+      }
+      else if (email_valid == 1){
+        alert("You must enter a valid email.");
+      }
+      else if (phone_valid == 1){
+        alert("You must enter a valid phone number. ");
+      }
+      else if (field_valid){
+        alert("Field of study cannot be empty");
+      }
+      else if (text_area_valid == 1){
+        alert("Description cannot be empty. ");
+      }
+      else{
+        alert("Dear " + first_name + " " + last_name + ", thanks for applying! ");
+      }
+    }
+    function day(){
+      var body = document.getElementsByTagName("body");
+      body[0].style.background = 'RGB(199, 237, 204)';
+      var h1 = document.getElementsByTagName('h1');
+      h1[0].style.color = 'purple';
+      var h2 = document.getElementsByTagName('h2');
+      for (var i = 0; i < h2.length; i++){
+        h2[i].style.color = 'purple';
+      }
+      var label = document.getElementsByTagName('label');
+      for (var i = 0; i < label.length; i++){
+        label[i].style.color = 'purple';
+      }
+      var p = document.getElementsByTagName('p');
+      for (var i = 0; i < p.length; i++){
+        p[i].style.color = 'purple';
+      }
+    }
+    function night(){
+      var body = document.getElementsByTagName("body");
+      body[0].style.background = 'darkgrey';
+      var h1 = document.getElementsByTagName('h1');
+      h1[0].style.color = 'white';
+      var h2 = document.getElementsByTagName('h2');
+      for (var i = 0; i < h2.length; i++){
+        h2[i].style.color = 'white';
+      }
+      var label = document.getElementsByTagName('label');
+      for (var i = 0; i < label.length; i++){
+        label[i].style.color = 'white';
+      }
+      var p = document.getElementsByTagName('p');
+      for (var i = 0; i < p.length; i++){
+        p[i].style.color = 'white';
+      }
+    }
+    function reset(){
+      var body = document.getElementsByTagName("body");
+      body[0].style.background = 'lightgrey';
+      var h1 = document.getElementsByTagName('h1');
+      h1[0].style.color = 'black';
+      var h2 = document.getElementsByTagName('h2');
+      for (var i = 0; i < h2.length; i++){
+        h2[i].style.color = 'black';
+      }
+      var label = document.getElementsByTagName('label');
+      for (var i = 0; i < label.length; i++){
+        label[i].style.color = 'black';
+      }
+      var p = document.getElementsByTagName('p');
+      for (var i = 0; i < p.length; i++){
+        p[i].style.color = 'black';
+      }
+    }
+  </script>
+</body>
+</html>
